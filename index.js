@@ -60,16 +60,17 @@ var schema = buildSchema(`
     games: [Game]
     platforms: [Platforms]
     esrbRating: [EsrbRating]
-  },
+},
   type Game {
+    id: Int
     title: String
     publisher: String
     developer: String
     releaseDate: String
-    platforms: String
+    platforms: [Platforms]
     esrbRating: EsrbRating
 },
-type Platforms {
+  type Platforms {
     id: Int
     name: String
 },
